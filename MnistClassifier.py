@@ -31,5 +31,6 @@ train_ds = train_ds.skip(10000).batch(1000).prefetch(2)
 model = DigitsClassifier()
 model.compile(tf.keras.optimizers.Adam(0.001), tf.keras.losses.SparseCategoricalCrossentropy())
 model.fit(train_ds, epochs=50, verbose=2, validation_data=test_ds)
-#for digit, label in dataset.take(10):
-    #model(digit)
+
+for digit, label in test_ds.take(1):
+    print(tf.argmax(model(digit), axis=1), label)
