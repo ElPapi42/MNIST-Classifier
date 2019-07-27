@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>KaggleMnistClassifier</Name>
     <RootNamespace>KaggleMnistClassifier</RootNamespace>
+    <InterpreterId>CondaEnv|CondaEnv|tensorflow-gpu</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,6 +26,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MnistClassifier.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|tensorflow-gpu" />
+    <InterpreterReference Include="CondaEnv|CondaEnv|tf2.0" />
+    <InterpreterReference Include="CondaEnv|CondaEnv|tf2.0-gpu" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
